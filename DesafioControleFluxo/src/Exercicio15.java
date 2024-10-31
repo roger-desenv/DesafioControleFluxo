@@ -1,23 +1,28 @@
-import java.util.Scanner;
-
 public class Exercicio15 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int[] numeros = new int[5]; // Declaração do array com 5 posições
+  public static void main(String[] args) {
+    int [] numeros = new int [10];
+    int maior = numeros[0];
+    int menor = numeros[0];
+    
+    for (int i = 0; i < numeros.length; i++ ) {
+      //System.out.println("Números inseridos: " + (i + 1));
+      numeros[i] = i + 1;
 
-        // Loop para pedir 5 números ao usuário e armazená-los no array
-        for (int i = 0; i < 5; i++) {
-            System.out.print("Insira o número " + (i + 1) + ": ");
-            numeros[i] = scanner.nextInt(); // Armazena o número inserido no array
-        }
+      System.out.println("Números armazenados: " + numeros[i]);
+      
+      if(numeros[i] > maior) {
+        maior = numeros[i];
+      }
 
-        // Exibe os números armazenados
-        System.out.println("Os números inseridos foram:");
-        for (int numero : numeros) {
-            System.out.println(numero);
-        }
-
-        scanner.close(); // Fecha o scanner
+      if(numeros[i] < menor) {
+        menor = numeros[i];
+      }
     }
+
+    System.out.println("O maior número é: " + maior);
+    System.out.println("O menor número é: " + menor);
+
+    
+  }
 }
 
